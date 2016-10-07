@@ -111,7 +111,7 @@ def send_static(filename):
 def render_css(filename):
     return static_file(filename,root='./static/')
 
-@post('/payees')
+@post('/api/transfer')
 def creation_handler():
     '''Handles payees creation'''
 
@@ -125,18 +125,26 @@ def creation_handler():
         if data is None:
             raise ValueError
 
-        # extract and validate name
+        # extract and validate payee and amount
         try:
 		   
-			name = data['name']
-			if not (name.endswith("(R)") | name.endswith("(N)")):
-				raise ValueError
+			payee = data['payee']
+			amount= data['amount']
+			status=validate_transfer(payee, amount)
+		
+			if status[0]=="SUCCESS":
+				# return 200 Success
+				response.headers['Content-Type'] = 'application/json'
+				return json.dumps({'status': 'TRANSFER VALIDATED'})
+			else:
+				response.status=422  #data is understood but the transaction requested is not valid
+				return json.dumps({'status': status[1]})
+			
         except (TypeError, KeyError):
             raise ValueError
-
-        # check for existence
-        if name in payees_dict:
-            raise KeyError
+			
+		
+		
 
     except ValueError:
         # if bad request data, return 400 Bad Request
@@ -160,7 +168,55 @@ def creation_handler():
     response.headers['Content-Type'] = 'application/json'
     return json.dumps({'name': name})
 
-@get('/payees')
+@post('/api/payees')
+def creation_handler():
+    '''Handles payees creation'''
+
+    try:
+        # parse input data
+        try:
+            data = request.json
+        except:
+            raise ValueError
+
+        if data is None:
+            raise ValueError
+
+        # extract and validate name
+        try:
+		   
+			name = data['name']
+			if not (name.endswith("(R)") | name.endswith("(N)")):
+				raise ValueError
+			  # add name
+			print name
+			if name.endswith("(R)"):
+				payees_dict[name]="Registered"
+			if name.endswith("(N)"):
+				payees_dict[name]="Not_Registered"
+			# return 200 Success
+			response.headers['Content-Type'] = 'application/json'
+			return json.dumps({'name': name})
+        except (TypeError, KeyError):
+            raise ValueError
+
+        # check for existence
+        if name in payees_dict:
+            raise KeyError
+
+    except ValueError:
+        # if bad request data, return 400 Bad Request
+        response.status = 400
+        return
+    
+    except KeyError:
+        # if name already exists, return 409 Conflict
+        response.status = 409
+        return
+
+  
+
+@get('/api/payees')
 def listing_handler():
     '''Handles name listing'''
 
