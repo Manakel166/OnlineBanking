@@ -13,3 +13,7 @@ build:
     - "pip install robotframework"
     - "pip install requests"
     - "pip install robotframework-requests"
+    - "cd /root/src/github.com/Manakel166/OnlineBanking/"
+    - "python OnlineBanking.py"
+    - "cd /root/src/github.com/Manakel166/OnlineBanking/tests"
+    - "python -m robot.run --variable ExecutionMode:API OnlineBanking_BDD-ProgressiveTesting.robot"
