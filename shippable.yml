@@ -5,10 +5,6 @@ python:
 addons:
   firefox: "28.0"
   
-script:
-  - export DISPLAY=:99.0
-  - xvfb-run --server-args="-ac"
-
 services:
   - selenium
   
