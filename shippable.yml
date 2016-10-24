@@ -10,9 +10,9 @@ services:
   
 build:
   ci:
-    - "pip install robotframework --use-mirrors"
-    - "pip install requests --use-mirrors"
-    - "pip install RequestsLibrary --use-mirrors"
-    - "pip install RequestsLibrary --use-mirrors"
+    - "pip install robotframework"
+    - "pip install requests"
+    - "pip install RequestsLibrary"
+    - "pip install RequestsLibrary"
     
     
