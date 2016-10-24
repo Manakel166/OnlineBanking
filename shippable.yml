@@ -11,8 +11,8 @@ services:
 build:
   ci:
     - "pip install robotframework"
-    - "pip install requests"
-    - "pip install robotframework-requests"
+    - "pip install -U requests"
+    - "pip install -U robotframework-requests"
     - "pip install robotframework-Selenium2Library"
     - "pip install urllib3 --upgrade --trusted-host https://pypi.python.org"
     - "cd /root/src/github.com/Manakel166/OnlineBanking/"
