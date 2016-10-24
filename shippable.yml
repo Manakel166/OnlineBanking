@@ -7,7 +7,7 @@ addons:
   
 script:
   - export DISPLAY=:99.0
-  - xvfb-run
+  - xvfb-run --server-args="-ac"
 
 services:
   - selenium
