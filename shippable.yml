@@ -14,6 +14,7 @@ build:
     - "pip install requests"
     - "pip install robotframework-requests"
     - "pip install robotframework-Selenium2Library"
+    - "pip install urllib3 --upgrade"
     - "cd /root/src/github.com/Manakel166/OnlineBanking/"
     - "python OnlineBanking.py  &"
     - "cd /root/src/github.com/Manakel166/OnlineBanking/tests"
