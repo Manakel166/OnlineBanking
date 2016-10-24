@@ -12,7 +12,4 @@ build:
   ci:
     - "pip install robotframework"
     - "pip install requests"
-    - "pip install RequestsLibrary"
-    - "pip install RequestsLibrary"
-    
-    
+    - "pip install robotframework-requests"
