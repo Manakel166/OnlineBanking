@@ -18,4 +18,5 @@ build:
     - "cd /root/src/github.com/Manakel166/OnlineBanking/"
     - "python OnlineBanking.py  &"
     - "cd /root/src/github.com/Manakel166/OnlineBanking/tests"
-    - "python -m robot.run --variable ExecutionMode:API --xunit /root/src/github.com/Manakel166/OnlineBanking/shippable/testresults/robottest.xml OnlineBanking_BDD-ProgressiveTesting.robot"
+    - "python -m robot.run --variable ExecutionMode:API --xunit /root/src/github.com/Manakel166/OnlineBanking/shippable/testresults/RF_API_TESTS.xml OnlineBanking_BDD-ProgressiveTesting.robot"
+    - "python -m robot.run --variable ExecutionMode:GUI --xunit /root/src/github.com/Manakel166/OnlineBanking/shippable/testresults/RF_GUI_TESTS.xml OnlineBanking_BDD-ProgressiveTesting.robot"
