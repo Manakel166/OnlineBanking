@@ -1,0 +1,18 @@
+language: python
+python:
+  - 2.7.6
+  
+addons:
+  firefox: "44.0"
+
+services:
+  - selenium
+  
+build:
+  ci:
+    - "pip install robotframework --use-mirrors"
+    - "pip install requests --use-mirrors"
+    - "pip install RequestsLibrary --use-mirrors"
+    - "pip install RequestsLibrary --use-mirrors"
+    
+    
