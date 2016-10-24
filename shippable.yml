@@ -7,7 +7,7 @@ addons:
   
 script:
   - export DISPLAY=:99.0
-  - /etc/init.d/xvfb start
+  - xvfb-run
 
 services:
   - selenium
