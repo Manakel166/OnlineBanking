@@ -14,6 +14,7 @@ build:
     - "sudo tar -zxvf geckodriver-v0.11.1-linux64.tar.gz"
     - "sudo ln -sf /tmp/geckodriver/geckodriver /usr/bin/geckodriver"
     - "export PATH=$PATH://usr/bin/geckodriver"
+    - "sudo su -c java -Djava.security.egd=file:///dev/urandom -jar /usr/local/selenium/selenium-server-standalone-2.52.0.jar -role node -hub http://localhost:4444/grid/register -Dwebdriver.gecko.driver=/usr/bin/geckodriver > /dev/null 2>&1 & > /dev/null 2>&1 &" 
     - "pip install robotframework"
     - "pip install -U requests"
     - "pip install -U robotframework-requests"
