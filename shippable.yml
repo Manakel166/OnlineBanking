@@ -11,7 +11,7 @@ services:
 build:
   ci:
     - "sudo wget https://github.com/mozilla/geckodriver/releases/download/v0.11.1/geckodriver-v0.11.1-linux64.tar.gz"
-    - "sudo tar -xjf geckodriver-v0.11.1-linux64.tar.gz"
+    - "sudo tar -zxvf geckodriver-v0.11.1-linux64.tar.gz"
     - "sudo ln -sf /tmp/geckodriver/geckodriver /usr/bin/geckodriver"
     - "pip install robotframework"
     - "pip install -U requests"
