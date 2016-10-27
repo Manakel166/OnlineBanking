@@ -9,7 +9,8 @@ ${url_test_grid}    http://127.0.0.1:4441/wd/hub
 *** Keywords ***
 Launch OnlineBanking on Browser:
     [Arguments]    ${browser}
-    Open Browser    ${url_OnlineBanking_Homepage}    ${browser}    driver1    ${url_test_grid}
+    Start Virtual Display    1920    1080
+    Open Browser   ${url_OnlineBanking_Homepage}
 
 On LoginPage, Enter Valid Credentials
     [Arguments]    ${UserName}    ${Password}
