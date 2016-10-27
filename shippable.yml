@@ -18,7 +18,7 @@ build:
     - "pip install robotframework-xvfb"
     - "cd /root/src/github.com/Manakel166/OnlineBanking/"
     - "python OnlineBanking.py  &"
-    - "echo Hello Laure"
+    - "echo Hello Laure4>6"
     - "cd /root/src/github.com/Manakel166/OnlineBanking/tests"
     - "python -m robot.run --variable ExecutionMode:API --xunit /root/src/github.com/Manakel166/OnlineBanking/shippable/testresults/RF_API_TESTS.xml OnlineBanking_BDD-ProgressiveTesting.robot"
     - "python -m robot.run --variable ExecutionMode:GUI --variable url_test_grid:http://localhost:4444/wd/hub --xunit /root/src/github.com/Manakel166/OnlineBanking/shippable/testresults/RF_GUI_TESTS.xml OnlineBanking_BDD-ProgressiveTesting.robot"
