@@ -2,8 +2,8 @@
 Library           Selenium2Library    30s
 
 *** Variables ***
-${url_OnlineBanking_Homepage}    http://127.0.0.1:1026/
-${url_test_grid}    http://127.0.0.1:4441/wd/hub
+${url_OnlineBanking_Homepage}    http://localhost:1026/
+${url_test_grid}    http://localhost:4445/wd/hub
 
 *** Keywords ***
 Launch OnlineBanking on Browser:
