@@ -3,13 +3,13 @@ Library           Selenium2Library    30s
 
 *** Variables ***
 ${url_OnlineBanking_Homepage}    http://127.0.0.1:1026/
-${url_test_grid}    http://127.0.0.1:4444/wd/hub
+${url_test_grid}    http://localhost:4444/wd/hub
 
 *** Keywords ***
 Launch OnlineBanking on Browser:
     [Arguments]    ${browser}
     ${ff default caps}    Evaluate    sys.modules['selenium.webdriver'].common.desired_capabilities.DesiredCapabilities.FIREFOX   sys,selenium.webdriver
-    Set To Dictionary    ${ff default caps}    marionette=${True}
+    Set To Dictionary    ${ff default caps}    marionette=${False}
     Open Browser    ${url_OnlineBanking_Homepage}    ${browser}    driver1    ${url_test_grid}
 
 On LoginPage, Enter Valid Credentials
