@@ -1,5 +1,6 @@
 *** Settings ***
 Library           Selenium2Library    30s
+Library      XvfbRobot
 
 *** Variables ***
 ${url_OnlineBanking_Homepage}    http://127.0.0.1:1026/
