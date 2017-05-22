@@ -3,7 +3,7 @@
     <head>
         <meta http-equiv="Content-type" content="text/html; charset=utf-8">
         <link rel="stylesheet" href="/css/default.css" type="text/css" media="screen" charset="utf-8" />
-        <title>Online Banking Demo: Homepage</title>
+        <title>Online Banking Demo: Homepage for Tarik</title>
     </head>
 
     <body>
